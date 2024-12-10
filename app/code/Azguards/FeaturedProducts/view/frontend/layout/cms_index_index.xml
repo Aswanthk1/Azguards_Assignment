@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Azguards_FeaturedProducts::css/featured_products.css"/>
+        <css src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <css src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+        <script src="Azguards_FeaturedProducts::js/featured_products.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Azguards\FeaturedProducts\Block\FeaturedProducts" name="featured.products"
+                   template="Azguards_FeaturedProducts::featured_products.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

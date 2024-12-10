@@ -1,0 +1,22 @@
+<?php
+/** @var Azguards\FeaturedProducts\Block\FeaturedProducts $block */
+?>
+<div class="featured-products">
+    <h2><?= $block->escapeHtml(__('Featured Products')) ?></h2>
+    <?php if ($block->getFeaturedProducts()->getSize()): ?>
+        <div class="products-slider">
+            <?php foreach ($block->getFeaturedProducts() as $product): ?>
+                <a href="<?= $block->escapeUrl($product->getProductUrl()) ?>" class="product-card">
+                    <img src="<?= $block->getImageUrl($product) ?>"
+                         alt="<?= $block->escapeHtml($product->getName()) ?>" />
+                    <p class="product-name"><?= $block->escapeHtml($product->getName()) ?></p>
+                    <p class="product-price">
+                        <?= $block->escapeHtml(__('₹%1', number_format($product->getFinalPrice(), 2))) ?>
+                    </p>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    <?php else: ?>
+        <p><?= $block->escapeHtml(__('No featured products available.')) ?></p>
+    <?php endif; ?>
+</div>
